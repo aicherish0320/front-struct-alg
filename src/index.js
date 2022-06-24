@@ -1,0 +1,2 @@
+// stack
+import '../stack/hello'
