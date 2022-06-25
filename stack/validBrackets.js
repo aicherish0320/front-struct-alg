@@ -3,7 +3,6 @@
  * @param {string} brackets
  */
 const validBrackets = (brackets) => {
-  debugger
   const stack = []
   const left = ['[', '{', '(']
 
