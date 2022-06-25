@@ -34,3 +34,9 @@ const validBrackets = (brackets) => {
 // For Test
 const brackets = '{[]}'
 console.log(validBrackets(brackets))
+
+/**
+解题思路
+  1. 对于没有闭合的左括号而言，越靠后的左括号，对应的右括号越靠前
+  2. 满足后进先出，考虑用栈
+ */
