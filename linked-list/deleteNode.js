@@ -18,3 +18,5 @@ const deleteNode = function (node) {
 }
 
 deleteNode(b)
+
+console.log('a >>> ', a)
