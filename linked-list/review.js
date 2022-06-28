@@ -1,5 +1,5 @@
 /**
-  删除节点
+  双指针遍历链表
  */
 const a = { val: 'a' }
 const b = { val: 'b' }
@@ -10,9 +10,15 @@ a.next = b
 b.next = c
 c.next = d
 
-const deleteNode = (node) => {
-  node.val = node.next.val
-  node.next = node.next.next
+const fn = (head) => {
+  let p1 = head
+  let p2 = head.next
+
+  while (p1 && p2) {
+    console.log(p1.val, p2.val)
+    p1 = p2
+    p2 = p2.next
+  }
 }
 
-deleteNode(b)
+fn(a)
