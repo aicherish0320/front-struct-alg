@@ -12,3 +12,11 @@
 
 - JavaScript 中没有链表
 - 可以用 Object 模拟链表
+
+## 原型链
+
+- 原型链的本质是链表
+- 原型链上的节点是各种原型对象，比如`Function.prototype`、`Object.prototype`
+- 原型链通过 `__proto__` 属性连接各种原型对象
+
+> 如果 A 沿着原型链能找到 B.prototype，那么 A instanceof B 为 true
