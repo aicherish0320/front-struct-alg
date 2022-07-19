@@ -1,13 +1,14 @@
 const { binaryTree } = require('./data')
 
 const preOrder = (root) => {
-  const stack = [root]
+  if (!root) return
 
+  const stack = [root]
   while (stack.length) {
-    const node = stack.pop()
-    console.log(node.val)
-    node.right && stack.push(node.right)
-    node.left && stack.push(node.left)
+    const n = stack.pop()
+    console.log(n.val)
+    n.right && stack.push(n.right)
+    n.left && stack.push(n.left)
   }
 }
 
