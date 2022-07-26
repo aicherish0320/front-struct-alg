@@ -49,4 +49,16 @@ const binaryTree = {
   }
 }
 
-module.exports = { tree, binaryTree }
+const binaryTree2 = {
+  val: 1,
+  left: null,
+  right: {
+    val: 2,
+    left: {
+      val: 3
+    },
+    right: null
+  }
+}
+
+module.exports = { tree, binaryTree, binaryTree2 }
