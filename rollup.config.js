@@ -1,6 +1,7 @@
 import path from 'path'
 import serve from 'rollup-plugin-serve'
 import babel from 'rollup-plugin-babel'
+import ts from 'rollup-plugin-typescript2'
 
 export default {
   input: './src/index.js',
@@ -13,11 +14,14 @@ export default {
     babel({
       exclude: 'node_modules/**'
     }),
+    ts({
+      tsconfig: path.resolve(__dirname, 'tsconfig.json')
+    }),
     serve({
       // open: true,
-      // openPage: '/public/index.html',
+      openPage: '/public/index.html',
       contentBase: '',
-      port: '3300'
+      port: '3330'
     })
   ]
 }
