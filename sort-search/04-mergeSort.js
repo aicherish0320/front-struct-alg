@@ -1,7 +1,6 @@
 const { arr } = require('./data')
 
 const mergeSort = (arr) => {
-  debugger
   const rec = (arr) => {
     if (arr.length === 1) return arr
 
