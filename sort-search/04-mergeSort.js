@@ -13,7 +13,7 @@ const mergeSort = (arr) => {
 
     const res = []
     while (orderLeft.length || orderRight.length) {
-      if (orderLeft.length & orderRight.length) {
+      if (orderLeft.length && orderRight.length) {
         res.push(
           orderLeft[0] > orderRight[0] ? orderRight.shift() : orderLeft.shift()
         )
@@ -30,4 +30,4 @@ const mergeSort = (arr) => {
   console.log('ret >>> ', ret)
 }
 
-mergeSort([3, 2, 1])
+mergeSort([5, 7, 1, 3, 9, 4])
