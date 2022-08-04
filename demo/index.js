@@ -1,43 +1,39 @@
-function getSequence(arr) {
-  const p = arr.slice()
-  const result = [0]
-  let i, j, u, v, c
-  const len = arr.length
-  for (i = 0; i < len; i++) {
-    const arrI = arr[i]
-    if (arrI !== 0) {
-      j = result[result.length - 1]
-      if (arr[j] < arrI) {
-        p[i] = j
-        result.push(i)
-        continue
-      }
-      u = 0
-      v = result.length - 1
-      while (u < v) {
-        c = (u + v) >> 1
-        if (arr[result[c]] < arrI) {
-          u = c + 1
-        } else {
-          v = c
-        }
-      }
-      if (arrI < arr[result[u]]) {
-        if (u > 0) {
-          p[i] = result[u - 1]
-        }
-        result[u] = i
-      }
+const binary = {
+  val: 'a',
+  left: {
+    val: 'b',
+    left: {
+      val: 'd'
+    },
+    right: {
+      val: 'e'
+    }
+  },
+  right: {
+    val: 'c',
+    left: {
+      val: 'f'
+    },
+    right: {
+      val: 'g'
     }
   }
-  u = result.length
-  v = result[u - 1]
-  while (u-- > 0) {
-    result[u] = v
-    v = p[v]
-  }
-  return result
 }
 
-console.log(' >>> ', getSequence([2, 4, 8, 7, 11, 6]))
-// [0,1,3,4] => [2,4,7,11]
+const bfs = (root) => {
+  const queue = [root]
+  while (queue.length) {
+    const n = queue.shift()
+    console.log(n.val)
+    n.left && queue.push(n.left)
+    n.right && queue.push(n.right)
+  }
+}
+
+const dfs = (root) => {
+  console.log(root.val)
+  root.left && dfs(root.left)
+  root.right && dfs(root.right)
+}
+// bfs(binary)
+dfs(binary)
